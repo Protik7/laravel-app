@@ -8,7 +8,7 @@ use App\Http\Controllers\User\PostController;
 use App\Http\Controllers\User\TagController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index'])->middleware('auth:sanctum');
 Route::get('/posts/{post}', [PostController::class, 'show']);
 Route::get('/popular_posts', [PostController::class, 'popular_posts']);
 
